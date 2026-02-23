@@ -22,6 +22,14 @@ Aşağıdaki bağlantılardan her konu başlığı için detaylı rehberlere ula
 
 ---
 
+## 📦 Ek Kaynaklar
+
+- **[✅ Post-Prodüksiyon Kontrol Listesi](./resources/checklist.md)** - Her projede kullanabileceğiniz adım adım checklist.
+- **[🔗 Faydalı Bağlantılar](./resources/links.md)** - Stok video, müzik, yazılım ve eğitim kaynakları.
+- **[📋 CHANGELOG](./CHANGELOG.md)** - Versiyon geçmişi.
+
+---
+
 ## 🚀 Katkıda Bulunma
 
 Bu rehber topluluk katkılarıyla büyümeyi hedeflemektedir. Eksik gördüğünüz noktaları eklemek veya hataları düzeltmek isterseniz lütfen [CONTRIBUTING.md](./CONTRIBUTING.md) dosyasını inceleyin.
@@ -29,11 +37,3 @@ Bu rehber topluluk katkılarıyla büyümeyi hedeflemektedir. Eksik gördüğün
 ## ⚖️ Lisans
 
 Bu proje **MIT Lisansı** altında korunmaktadır. Daha fazla bilgi için [LICENSE](./LICENSE) dosyasına göz atın.
-
----
-
-## 📚 Kaynaklar ve İş Başka Bağlantılar
-
-*   **Stok Video:** [Pexels](https://www.pexels.com), [Pixabay](https://pixabay.com), [Artgrid](https://artgrid.io)
-*   **Müzik & SFX:** [Epidemic Sound](https://www.epidemicsound.com), [Artlist](https://artlist.io), [Freesound](https://freesound.org)
-*   **Öneri:** Faydalı bulduğunuz YouTube kanallarını buraya ekleyerek topluluğa destek olabilirsiniz!
