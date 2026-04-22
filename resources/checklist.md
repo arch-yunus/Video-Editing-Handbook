@@ -57,4 +57,20 @@ Bu kontrol listesini her projede takip ederek adım atlamaktan kaçın.
 
 ---
 
+## ✅ Kalite Kontrol (QC) ve Son Rötuşlar
+- [ ] Yazım hataları (altyazı ve jenerik) kontrol edildi
+- [ ] "Dead pixel" veya sensör kirleri temizlendi
+- [ ] Siyah kare (black frame) boşlukları var mı bakıldı
+- [ ] Ses/görüntü senkron kayması kontrol edildi
+
+---
+
+## ✅ Proje Arşivleme
+- [ ] Kullanılmayan ham materyaller temizlendi (Storage tasarrufu)
+- [ ] Proje dosyası "Standalone" hale getirildi (Media Management / Collect Files)
+- [ ] Final export ve proje dosyası buluta yedeklendi
+- [ ] Render dosyaları (cache) silindi
+
+---
+
 > 💡 Bu listeyi her proje için kopyalayın ve tamamladıkça işaretleyin.

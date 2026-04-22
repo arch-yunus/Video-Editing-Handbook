@@ -59,6 +59,21 @@ Görsel veya işitsel bir benzerlik paylaşan iki farklı sahne arasında yapıl
 
 ---
 
+## 🧠 Kurgu Kuralları ve Devamlılık (Continuity)
+
+İyi bir kurgu, izleyicinin mekansal ve zamansal olarak kafasının karışmasını önler.
+
+### 🗺️ 180 Derece Kuralı
+İki karakter arasındaki hayali bir "aks" çizgisidir. Kamera bu çizginin sadece bir tarafında kalmalıdır. Çizgi aşılırsa (Crossing the line), karakterlerin bakış yönleri birbirine ters düşer ve izleyicinin yön duygusu bozulur.
+
+### 📐 30 Derece Kuralı
+Aynı obje/kişi üzerine yapılan bir kesmede, kameranın en az **30 derece** yer değiştirmesi veya odak uzaklığının (focal length) belirgin şekilde değişmesi gerekir. Aksi takdirde kesme "hatalı bir jump cut" gibi görünür ve gözü tırmalar.
+
+### 👁️ Kesintisiz Hareket (Cutting on Action)
+Karakter bir kapıyı açarken veya otururken kesme yapmak, kesmeyi "görünmez" kılar. İzleyici hareketi takip ettiği için teknik kesmeyi fark etmez.
+
+---
+
 ### Smash Cut
 Çok yüksek sesli veya yoğun bir sahneden aniden sessiz, sakin bir sahneye geçiş. Şok ve komedi etkisi yaratır.
 
@@ -68,6 +83,19 @@ Görsel veya işitsel bir benzerlik paylaşan iki farklı sahne arasında yapıl
 İki farklı mekanda aynı anda gelişen olayların birbirini kesen şekilde gösterilmesi.
 
 **Kullanım:** Gerilim sahneleri, kovalamacalar, telefon konuşmaları.
+
+---
+
+## 🎭 Kurgu Teorisi: Kuleshov Etkisi
+
+Kurgu sadece görüntüleri birleştirmek değil, **yeni anlamlar yaratmaktır.**
+
+**Kuleshov Deneyi:**
+1. Aynı ifadesiz erkek yüzü + **Bir kase çorba** → İzleyici: "Adam aç."
+2. Aynı ifadesiz erkek yüzü + **Tabuttaki çocuk** → İzleyici: "Adam üzgün."
+3. Aynı ifadesiz erkek yüzü + **Güneşlenen kadın** → İzleyici: "Adam arzuluyor."
+
+> 💡 **Sonuç:** Kurgu, iki bağımsız klibin yan yana gelmesiyle izleyicinin beyninde üçüncü bir anlam üretme sanatıdır.
 
 ---
 

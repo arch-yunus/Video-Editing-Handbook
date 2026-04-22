@@ -15,6 +15,12 @@ Profesyonel bir ses miksajı şu katmanlardan oluşur:
 | **Ambiyans** | Mekan arka plan sesi | -30 dB ile -20 dB |
 | **Müzik** | Duygu altyapısı | -18 dB ile -12 dB (diyaloğun altında) |
 
+### 🧭 Panning (Pan Ayarları)
+Seslerin stereo sahnesinde nereye yerleşeceği, gerçekçilik için kritiktir:
+- **Diyalog:** Her zaman merkez (Center).
+- **Ambiyans:** Geniş stereo (L/R).
+- **SFX:** Görüntüdeki nesnenin konumuna göre merkez, sol veya sağ.
+
 ---
 
 ## 🎙️ Diyalog İşleme (Dialogue Processing)
@@ -46,6 +52,10 @@ Ham Ses → Noise Reduction → EQ → Compression → De-Esser → Maximizer
 | Instagram | -16 LUFS |
 | Netflix | -27 LUFS (gece sahneleri) / -15 LUFS (genel) |
 | Sinema | -23 LUFS (Dolby) |
+
+### 📊 Teknik Özellikler (Specs)
+- **Sample Rate (Örnekleme Hızı):** Video için endüstri standardı **48 kHz**'dir. Müzik dosyaları genellikle 44.1 kHz olsa da projeyi her zaman 48 kHz üzerinden yönetin.
+- **Bit Depth:** Profesyonel kayıtlar için **24-bit** veya **32-bit Float** tercih edilmelidir. Export sırasında genellikle **16-bit** veya **24-bit PCM** kullanılır.
 
 ---
 

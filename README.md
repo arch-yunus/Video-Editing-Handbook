@@ -13,12 +13,12 @@ Kapsamlı bir video kurgu, post-prodüksiyon ve görsel hikaye anlatımı rehber
 
 Aşağıdaki bağlantılardan her konu başlığı için detaylı rehberlere ulaşabilirsiniz:
 
-1.  **[⚙️ Post-Prodüksiyon İş Akışı](./modules/01-workflow.md)** - Organizasyondan Picture Lock aşamasına kadar süreçler.
-2.  **[✂️ Temel Kurgu Teknikleri](./modules/02-techniques.md)** - J-Cut, L-Cut, Match Cut ve diğerleri.
-3.  **[🎧 Ses ve Ses Tasarımı](./modules/03-audio.md)** - Diyalog temizleme ve ses efektleri.
-4.  **[🎨 Renk Düzenleme](./modules/04-color.md)** - Color Correction vs. Grading, LUT kullanımı.
-5.  **[🤖 Yapay Zeka (AI) Entegrasyonları](./modules/05-ai.md)** - Modern kurgu sürecinde AI araçları.
-6.  **[📤 Dışa Aktarma ve Codec'ler](./modules/06-export.md)** - H.264, ProRes ve Bitrate ayarları.
+1.  **[⚙️ Post-Prodüksiyon İş Akışı](./modules/01-workflow.md)** - Organizasyondan Round-tripping ve Picture Lock aşamasına kadar profesyonel süreçler.
+2.  **[✂️ Temel Kurgu Teknikleri](./modules/02-techniques.md)** - Kesme türleri, Kuleshov Etkisi ve 180 derece kuralı gibi devamlılık esasları.
+3.  **[🎧 Ses ve Ses Tasarımı](./modules/03-audio.md)** - Diyalog temizleme, LUFS standartları ve profesyonel miksaj katmanları.
+4.  **[🎨 Renk Düzenleme](./modules/04-color.md)** - Color Space Transform (CST), LOG vs RAW farkları ve Scopes kullanımı.
+5.  **[🤖 Yapay Zeka (AI) Entegrasyonları](./modules/05-ai.md)** - Modern AI araçları, üretken video ve kurguda AI etiği.
+6.  **[📤 Dışa Aktarma ve Codec'ler](./modules/06-export.md)** - H.264, ProRes, Bitrate tablaları ve Chroma Subsampling detayları.
 
 ---
 

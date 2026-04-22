@@ -1,6 +1,12 @@
-# 🎨 Renk Düzenleme (Color Pipeline)
+## 📽️ Format Farkları: RAW, LOG ve Rec.709
 
-> Renk, bir filmin kimliğidir. Aynı sahne farklı renk işlemleriyle tamamen farklı duygular yaratabilir.
+Hangi formatta çekim yapacağınız, kurgu masasındaki esnekliğinizi belirler.
+
+| Format | Dinamik Aralık | Esneklik | İşlem Gücü |
+|--------|----------------|----------|------------|
+| **Rec.709** | Düşük (Kısıtlı) | Çok Az | Çok Düşük (Hafif) |
+| **LOG** | Çok Yüksek | Yüksek | Orta |
+| **RAW** | Maksimum | Sınırsız (ISO/WB değişebilir) | Çok Yüksek (Ağır) |
 
 ---
 
@@ -36,6 +42,19 @@ Gözünüze güvenmeyin — **Scopes** kullanın. Monitörünüzün rengi yanlı
 | **Parade** | R, G, B kanallarını ayrı ayrı inceleme |
 | **Vectorscope** | Renk tonu (hue) ve doygunluk (saturation) |
 | **Histogram** | Tüm tonal değerlerin dağılımı |
+
+> 💡 **İpucu:** Vectorscope üzerindeki **"Skin Tone Line"** (Cilt Tonu Çizgisi), etnik köken fark etmeksizin insan kanındaki rengin düştüğü yerdir. Cilt tonunuzun doğal durması için bu çizgiye yakınlığını kontrol edin.
+
+---
+
+## 🔄 CST (Color Space Transform) vs. LUT
+
+Profesyonel renkçiler artık Log → Rec.709 dönüşümü için LUT yerine **CST** kullanmaktadır.
+
+**Neden CST?**
+- **Matematikseldir:** LUT gibi veriyi "kırmaz", daha pürüzsüz geçişler sağlar.
+- **Giriş/Çıkış Esnekliği:** Giriş (Input Gamma/Space) ve Çıkış (Output Gamma/Space) değerlerini manuel seçebilirsiniz.
+- **HDR Hazırlığı:** Projenizi HDR'a çevirirken sadece CST ayarını değiştirmeniz yeterlidir.
 
 ---
 

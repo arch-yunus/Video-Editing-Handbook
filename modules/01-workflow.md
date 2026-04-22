@@ -27,9 +27,14 @@ Proje_Adı/
 ```
 
 ### Kural: 3-2-1 Yedekleme
-- **3** kopya bulundur
-- **2** farklı medyada (örn: HDD + SSD)
-- **1** tanesini farklı fiziksel konumda (bulut veya offsite)
+- **3** kopya bulundur.
+- **2** farklı medyada (örn: HDD + SSD).
+- **1** tanesini farklı fiziksel konumda (bulut veya offsite).
+
+### 🏷️ Metadata ve İsimlendirme Metodolojisi
+Sadece klasörleri değil, dosyaları da akıllıca isimlendirin:
+- `YYYYMMDD_Sahne_Plan_Take` (Örn: `20231024_S01_P02_T01.mov`).
+- **Tagging:** Kurgu yazılımı içinde (Premiere Metadata veya Resolve Metadata) çekimlere "Good Take", "Must Use" gibi etiketler ekleyerek arama sürecini hızlandırın.
 
 ---
 
@@ -43,6 +48,10 @@ Proje_Adı/
 | 6K / 8K     | 2048x1080 veya daha düşük | ProRes 422 LT |
 
 > **💡 İpucu:** DaVinci Resolve, Premiere Pro ve Final Cut Pro proxy iş akışlarını otomatik yönetebilir. Export aşamasında orijinal kaliteli dosyaya geri döner.
+
+### 🌐 Offline vs. Online Editing
+- **Offline Editing:** Düşük çözünürlüklü (Proxy) dosyalarla hikayeyi kurma aşaması. Sistem performansını maksimize eder.
+- **Online Editing:** Picture Lock sonrası orijinal yüksek çözünürlüklü dosyalara (RAW/Log) geri dönüp renk ve efektlerin uygulandığı aşama.
 
 ---
 
@@ -82,6 +91,17 @@ Ritim, nefes ve tempo bu aşamada şekillenir.
 **En kritik aşamalardan biri.** Görüntü kurgusunun tamamlanıp onaylandığı nokta.
 
 > ⚠️ **Uyarı:** Picture Lock sonrası herhangi bir kesme yapılırsa ses tasarımı ve renk çalışması sıfırdan başlamak zorunda kalabilir. Bu süreci müşteri/yönetmen onayıyla belgele.
+
+---
+
+## 🔄 6.5. Round-Tripping (Yazılımlar Arası Geçiş)
+Profesyonel projelerde kurgu Premiere'de yapılıp renk için Resolve'a gönderilebilir.
+
+**İş Akışı:**
+1. **Premiere'den Export:** Timeline'ı basitleştirin (sadece video trackleri kalsın), `XML` veya `AAF` olarak export edin.
+2. **Resolve'a Import:** XML dosyasını import ederek orijinal medya dosyalarına linkleyin (Conforming).
+3. **Color Grading:** Renk işlemleri tamamlanır.
+4. **Geri Dönüş:** Render alıp (yine XML ile) Premiere'e geri dönün veya final render'ı Resolve'dan yapın.
 
 ---
 
