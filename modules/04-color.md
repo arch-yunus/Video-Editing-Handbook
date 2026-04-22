@@ -14,72 +14,65 @@
 
 ---
 
+---
+
 ## 🏗️ Renk Yönetimi (Color Management)
 
-Profesyonel iş akışlarında "göz kararı" renk yapmak yerine bir sistem kullanılır.
+Profesyonel iş akışlarında "göz kararı" renk yapmak yerine matematiksel bir sistem kullanılır.
 
 ### ACES (Academy Color Encoding System)
-Renklerin farklı kameralar ve ekranlar arasında tutarlı görünmesini sağlayan endüstri standardıdır.
-- **IDT (Input):** Kameranın renk profilini ACES uzayına çevirir.
-- **ODT (Output):** ACES uzayındaki görüntüyü izleyicinin ekranına (Rec.709, HDR vb.) çevirir.
+Farklı kameralar (Sony, RED, Arri) arasındaki renk farklarını eşitleyen evrensel standart.
+- **IDT:** Kameranın RAW/Log verisini ACES uzayına taşır.
+- **ODT:** Projeyi izleyici ekranına (Rec.709, HDR) uygun hale getirir.
+
+---
+
+## 🎨 Teknik Detaylar: Bit Derinliği ve Subsampling
+
+Renkçinin en büyük düşmanı **banding** (renk geçişlerinde oluşan artifactlar) ve **noise**'dur.
+
+| Özellik | Detay | Önemi |
+|---------|-------|-------|
+| **Bit Depth** | **8-bit** (256 değer) vs **10-bit** (1024 değer) | 10-bit, renk düzenlemede (özellikle gökyüzü gibi yumuşak geçişlerde) parçalanmayı önler. |
+| **Chroma Subsampling** | **4:2:0** vs **4:2:2** vs **4:4:4** | Yeşil perde (Chroma Key) işlerinde 4:2:2 ve üzeri net kenarlar için şarttır. |
 
 ---
 
 ## 🏗️ DaVinci Resolve: Nodal Yapı (Node Strategy)
 
-Renk düzenleme katmanlar (layers) yerine düğümler (nodes) üzerinden ilerler. İşte tipik bir profesyonel node ağacı (fixed node tree):
-1.  **Node 01: Exposure & WB:** Temel pozlama ve beyaz dengesi düzeltmeleri.
-2.  **Node 02: Contrast & Saturation:** Görüntünün dinamik aralığını ve canlılığını belirleme.
-3.  **Node 03: Primary Corrections:** Genel tonlamalar.
-4.  **Node 04: Secondaries / Power Windows:** Sadece belirli alanları (örn: sadece gökyüzünü veya sadece yüzü) değiştirme.
-5.  **Node 05: Look / Film Emulation:** Projenin son sanatsal dokunuşu.
-
----
-
-## 🔑 İki Temel Safha
-
-### 1. Color Correction (Renk Doğrulama)
-**Teknik** süreçtir. Görüntüyü "sıfır" noktasına getirmektir.
-- White Balance & Exposure düzeltme.
-- Kamera eşleme (Match Shot).
-- **Signal Chain:** Correction her zaman Grading'den önce gelmelidir.
-
-### 2. Color Grading (Derecelendirme)
-**Sanat** ve **Psikoloji**. İzleyiciye ne hissettirmek istiyorsunuz?
-- **Primary Grading:** Tüm görüntüyü etkileyen genel değişiklikler.
-- **Secondary Grading:** Sadece belirli bir bölgeyi (örn: gökyüzünün mavisi) veya rengi (örn: sadece kırmızı elbise) değiştirme.
-- **Power Windows & Tracking:** Hareketli bir nesneyi maskeleyerek sadece ona müdahale etme.
+Renk düzenleme katmanlar yerine düğümler (nodes) üzerinden ilerler. Tipik bir **Fixed Node Tree**:
+1.  **Noise Reduction:** (Eğer gerekiyorsa) İlk sırada yapılır.
+2.  **Exposure / WB:** Pozlama ve beyaz dengesini "sıfırlama".
+3.  **CST (Color Space Transform):** Log görüntüyü Rec.709'a çevirme.
+4.  **Match Shots:** Sahneler arası tutarlılık sağlama.
+5.  **Look Dev:** Filmin sanatsal tonunu (Teal & Orange vb.) verme.
+6.  **Film Grain:** Dokusal derinlik için film greni ekleme.
 
 ---
 
 ## 📊 Renk Araçları (Scopes)
 
-| Scope | Görevi | Kritik Nokta |
-|-------|--------|---------------|
-| **Waveform** | Parlaklık (Luma) | 0 (Siyah) - 100/1023 (Beyaz) arası. Parlak alanların patlamadığından (clipping) emin olun. |
-| **Parade** | RGB Dengesi | Kanalların alt/üst sınırları dengeli olmalı. Beyaz dengesi hatalarını burada görebilirsiniz. |
-| **Vectorscope** | Ton ve Doygunluk | **Skin Tone Line:** İnsan cildi (ırk fark etmeksizin) bu çizgi üzerine düşmelidir. |
+| Scope | Kritik Nokta |
+|-------|---------------|
+| **Waveform** | 0-100 IRE arası. 100'ün üzeri "patlar", 0'ın altı "bilgi kaybıdır". |
+| **Vectorscope** | **Skin Tone Line:** İnsan cildi (ırk fark etmeksizin) bu çizgi üzerine düşmelidir. |
+| **Parade** | Kırmızı, Yeşil ve Mavi kanalların dengesi. Beyaz dengesi için en iyi araçtır. |
 
 ---
 
 ## 🔄 CST (Color Space Transform) vs. LUT
 
-Profesyonel renkçiler artık Log → Rec.709 dönüşümü için LUT yerine **CST** kullanmaktadır.
-
-- **CST:** Matematikseldir. Veriyi bozmadan (clipping yapmadan) renk uzayları arası geçiş yapar.
-- **LUT:** Sabit bir "filtre" gibidir. Pozlamanız LUT'a tam uygun değilse detay kaybı yaşatabilir.
+- **CST:** Matematikseldir. Veriyi bozmadan dönüştürür. Dinamik aralığı korur.
+- **LUT:** Sabit bir "maske" gibidir. Pozlamanız LUT'a tam doğru değilse veriyi kalıcı olarak siyah/beyazda ezebilir (clipping).
 
 ---
 
-## 🌈 Renk Teorisi ve Psikoloji
+## 🌈 Look Development (Görünüm Tasarımı)
 
-*   **Complementary (Karşıt):** Orange & Teal. Derinlik ve kontrast sağlar.
-*   **Analogous (Benzer):** Yeşil ve Sarı tonlar. Huzur ve bütünlük sağlar.
-*   **Triadic:** Üç farklı canlı renk. Enerji ve çocuksu bir hava verir.
-
-**Duygusal Karşılıklar:**
-- **Sıcak:** Samimiyet, enerji, geçmişe özlem.
-- **Soğuk:** Mesafe, teknoloji, korku, gelecek.
+Renk düzenleme sadece düzeltme değil, bir **atmosfer** yaratmaktır.
+- **Kodak/Fuji Emulation:** Dijital görüntüyü analog film gibi hissettirme.
+- **Power Windows & Tracking:** Hareketli bir karakteri aydınlatıp arka planı karartarak odağı yönetme.
+- **Color Contrast:** Sadece parlaklık ile değil, zıt renkler (Mavi - Turuncu gibi) ile derinlik yaratma.
 
 ---
 

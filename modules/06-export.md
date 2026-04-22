@@ -32,21 +32,54 @@ Kurgu bittikten sonra, renk veya VFX için gönderilen yüksek kaliteli formatla
 
 ---
 
-## 📶 Bitrate ve Dosya Boyutu
+## 🏗️ Profesyonel Teslimat (Mastering)
 
-**Formül:** `Dosya Boyutu = Bitrate x Süre`
+Sadece YouTube için değil, farklı mecralar için "Master" paketler hazırlanır:
 
-| Çözünürlük | Kare Hızı | H.264 (Mbps) | ProRes 422 (Mbps) |
-|-----------|-----------|--------------|-------------------|
-| **1080p** | 24/25/30  | 8 - 12       | ~117              |
-| **1080p** | 50/60     | 12 - 15      | ~234              |
-| **4K (UHD)**| 24/25/30  | 35 - 45      | ~470              |
-| **4K (UHD)**| 50/60     | 60 - 80      | ~900              |
+| Teslimat Türü | Format | Kullanım Alanı |
+|---------------|--------|----------------|
+| **DCP (Digital Cinema Package)** | MXF (JPEG 2000) | Sinema salonları için şifreli paket. |
+| **IMF (Interoperable Master Format)** | MXF | Netflix, Amazon gibi büyük yayın ağları için yüksek kaliteli kaynak dosya. |
+| **ProRes 4444 / HQ** | .MOV | Arşivleme ve daha sonraki düzenlemeler için en yüksek kalite. |
 
-### Bitrate Kontrol Modları
-- **CBR:** Sabit veri hızı. Canlı yayınlar için idealdir.
-- **VBR 1-Pass:** Hızlı ama bazı sahnelerde kalite kaybı olabilir.
-- **VBR 2-Pass:** İlk geçişte analiz eder, ikinci geçişte verimli dağıtır. En iyi sonuç.
+---
+
+## 📊 Bitrate Hesaplama ve Dosya Boyutu
+
+Dosya boyutu, çözünürlükten ziyade **Bitrate** (Bit hızı) ile ilgilidir.
+- **VBR (Variable Bit Rate):** Aksiyonun olduğu yerde bitrate'i artırır, sakin yerde düşürür. (Daha verimli).
+- **CBR (Constant Bit Rate):** Her zaman aynı hız. (Canlı yayınlar için uygun).
+
+**Formül:** `Dosya Boyutu (MB) = [Bitrate (Mbps) x Süre (Saniye)] / 8`
+*Örn: 10 Mbps ile 60 saniyelik bir video = 600 / 8 = 75 MB.*
+
+---
+
+## 📱 Sosyal Medya Optimizasyonu (YouTube, TikTok, Instagram)
+
+Her platform videonuzu tekrar sıkıştırır. Bu kaybı en aza indirmek için:
+
+| Platform | Format | Çözünürlük | Önerilen Bitrate (H.264) |
+|----------|--------|------------|---------------------------|
+| **YouTube (4K)** | MP4 | 3840x2160 | 45-60 Mbps |
+| **Instagram Reels** | MP4 | 1080x1920 (9:16) | 15 Mbps |
+| **TikTok** | MP4 | 1080x1920 | 10-15 Mbps |
+
+---
+
+## 📺 HDR (High Dynamic Range) Export
+
+HDR video, standart (SDR) videolara göre çok daha fazla parlaklık ve renk bilgisi taşır.
+- **Rec.2020:** HDR için kullanılan geniş renk uzayı.
+- **Nits:** Parlaklık birimi. HDR10 için genellikle 1000 nits hedef alınır.
+
+---
+
+## 🛠️ Teknik Terimler ve Dipnotlar
+
+*   **Alpha Channel:** Görselin şeffaflık bilgisi (Logo veya alt yazı export alırken ProRes 4444 kullanılır).
+*   **Frame Rate (Kare Hızı):** 24 fps (Sinematik), 30 fps (TV/Vlog), 60 fps (Oyun/Spor).
+*   **Multiplexer:** MP4 veya MOV gibi konteyneri oluşturan yapı.
 
 ---
 

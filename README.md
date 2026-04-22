@@ -24,8 +24,12 @@ Aşağıdaki bağlantılardan her konu başlığı için detaylı rehberlere ula
 
 ## 📦 Ek Kaynaklar
 
-- **[✅ Post-Prodüksiyon Kontrol Listesi](./resources/checklist.md)** - Her projede kullanabileceğiniz adım adım checklist.
-- **[🔗 Faydalı Bağlantılar](./resources/links.md)** - Stok video, müzik, yazılım ve eğitim kaynakları.
+Aşağıdaki kaynaklar teknik bilginizi derinleştirmenize yardımcı olacaktır:
+
+- **[✅ Post-Prodüksiyon Kontrol Listesi](./resources/checklist.md)** - Adım adım profesyonel checklist.
+- **[📖 Video Kurgu Terminolojisi](./resources/glossary.md)** - A'dan Z'ye teknik terimler sözlüğü.
+- **[🖥️ Donanım Tavsiyeleri](./resources/hardware.md)** - Kurgu için PC/Mac sistem önerileri.
+- **[🔗 Faydalı Bağlantılar](./resources/links.md)** - Stok, müzik ve yazılım kaynakları.
 - **[📋 CHANGELOG](./CHANGELOG.md)** - Versiyon geçmişi.
 
 ---

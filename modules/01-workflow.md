@@ -28,8 +28,11 @@ graph TD
 
 İyi bir kurgu, iyi bir organizasyonla başlar. **"Organize olmak zaman kaybettirir" değil, "organize olmamak daha fazla zaman kaybettirir."**
 
-### Önerilen Klasör Hiyerarşisi
+### 🛡️ Veri Güvenliği (Ingest & Checksum)
+Ham görüntüleri karta aktarırken bas sürükle-bırak yöntemi risklidir. Profesyonel projelerde **Checksum** (MD5 veya XXH64) doğrulama yapan yazılımlar (Hedge, Silverstack, DaVinci Resolve Clone Tool) kullanılmalıdır. Bu, verinin kopyalanırken bozulmadığını matematiksel olarak kanıtlar.
 
+### Önerilen Klasör Hiyerarşisi
+(Aynı yapı korunmuştur...)
 ```
 Proje_Adı/
 ├── 01_RAW_FOOTAGE/       # Ham kamera görüntüleri (asla silme!)
@@ -47,21 +50,14 @@ Proje_Adı/
 └── 06_TURNOVERS/         # Diğer departmanlar için hazırlanan dosyalar (EDL, XML, AAF)
 ```
 
-### 🏷️ Dosya Adlandırma Konvansiyonu (Naming Convention)
+---
 
-Profesyonel bir projede dosya isimleri tutarlı olmalıdır:
-`YYYYMMDD_ProjeAdi_Sahne_Varyasyon_Versiyon_EditörBaşHarfleri.ext`
-Örn: `20240422_Handbook_Opening_RoughCut_v01_BY.mp4`
+## 🏗️ 1.5. Donanım ve Çalışma Alanı (Hardware Setup)
 
-### 🏷️ Dailies ve Metadata
-Çekimlerin yapıldığı günün sonunda görüntülerin kontrol edilmesi sürecine **Dailies** denir.
-- **Log Sheet:** Çekim sırasında tutulan notlarla görüntüleri eşleştirin.
-- **Metadata:** Kurgu yazılımı içinde (Premiere Metadata veya Resolve Metadata) çekimlere "Good Take", "Must Use" gibi etiketler ekleyerek arama sürecini hızlandırın.
-
-### Kural: 3-2-1 Yedekleme
-- **3** kopya bulundur.
-- **2** farklı medyada (örn: HDD + SSD).
-- **1** tanesini farklı fiziksel konumda (bulut veya offsite).
+Kurgu sırasında tıkanıklıkları (bottleneck) önlemek için disk yönetimi kritiktir:
+- **OS/Apps Drive:** İşletim sistemi ve programlar için hızlı bir NVMe SSD.
+- **Media Drive (RAID):** Görüntülerin durduğu alan. 4K+ projelerde **RAID 0** (hız için) veya **RAID 5** (güvenlik + hız) önerilir.
+- **Scratch/Cache Drive:** Yazılımların geçici dosyaları (render files, peak files) için ayrı bir SSD. Bu, ana diskin performansını korur.
 
 ---
 
@@ -69,32 +65,34 @@ Profesyonel bir projede dosya isimleri tutarlı olmalıdır:
 
 4K/6K/8K çekimler düzenleme yaparken sistemi yavaşlatır. **Proxy**, ham görüntünün düşük çözünürlüklü kopyasıdır.
 
-| Format      | Proxy Çözünürlüğü | Önerilen Codec |
-|-------------|-------------------|----------------|
-| 4K (3840x2160) | 1920x1080 | ProRes Proxy / DNxHD LB |
-| 6K / 8K     | 1280x720 | ProRes 422 LT |
+| Yazılım | Önerilen Proxy Ayarı | Codec |
+|---------|---------------------|-------|
+| **Premiere Pro** | 1280x720 ProRes Proxy | QuickTime (.mov) |
+| **DaVinci Resolve** | Half Res / Quarter Res | ProRes 422 LT / DNxHR LB |
+| **Final Cut Pro** | 50% Size | ProRes Proxy |
 
-> **💡 İpucu:** DaVinci Resolve, Premiere Pro ve Final Cut Pro proxy iş akışlarını otomatik yönetebilir. Export aşamasında orijinal kaliteli dosyaya geri döner.
+> **💡 İpucu:** Proxy oluştururken "Burn-in" (dosya adı ve timecode'un görüntü üzerine yazılması) tercih edilebilir. Bu, kurgu sırasında hangi dosya ile çalıştığınızı anlık görmenizi sağlar.
 
 ---
 
 ## 🔗 3. Senkronizasyon (Syncing)
 
-Harici ses kaydediciler (Zoom H6, Sound Devices gibi) kullanıldığında ses ve görüntünün eşleştirilmesi gerekir.
+Harici ses kaydediciler kullanıldığında ses ve görüntünün eşleştirilmesi gerekir.
 
 **Yöntemler:**
-1. **Klap tahtası (Slate):** Fiziksel klap sesi ve görüntüsüyle elle sync alma.
-2. **Waveform Matching:** Yazılımın ses dalgalarını karşılaştırarak otomatik eşleştirmesi.
-3. **Timecode:** Profesyonel setlerde kamera ve ses cihazlarını aynı timecode'a bağlama (Tentacle Sync vb.).
+1. **Klap tahtası (Slate):** Fiziksel klap sesi ve görüntüsüyle elle sync alma. En güvenilir yöntemdir.
+2. **Waveform Matching:** Yazılımın ses dalgalarını karşılaştırarak otomatik eşleştirmesi. Rüzgarlı veya gürültülü ortamlarda hata payı yüksektir.
+3. **Timecode (LTC):** Profesyonel setlerde kamera ve ses cihazlarını aynı timecode'a bağlama. Post-prodüksiyonda saniyeler içinde binlerce klibi eşleştirmenizi sağlar.
 
 ---
 
 ## ✂️ 4. Kurgu Aşamaları (Assembly to Fine Cut)
 
 1.  **Assembly Cut:** Senaryo sırasına göre tüm çekimlerin dizilmesi.
-2.  **Rough Cut:** Hikayenin ham iskeleti. Mükemmellik aranmaz.
+2.  **Rough Cut:** Hikayenin ham iskeleti. Mükemmellik aranmaz, sadece akış kontrol edilir.
 3.  **Fine Cut:** Ritim, nefes ve tempo bu aşamada şekillenir.
     - **Pacing:** Sahnenin hızı duygusal tonla uyumlu hale getirilir.
+4. **Director's Cut / Producer's Cut:** Revizyon ve onay süreçleri.
 
 ---
 
@@ -102,37 +100,35 @@ Harici ses kaydediciler (Zoom H6, Sound Devices gibi) kullanıldığında ses ve
 
 **En kritik aşamalardan biri.** Görüntü kurgusunun tamamlanıp onaylandığı nokta.
 
-> ⚠️ **Uyarı:** Picture Lock sonrası herhangi bir kesme yapılırsa ses tasarımı ve renk çalışması "out of sync" olur. Bu süreci mutlaka yöneticiden onay alarak resmileştirin.
+> ⚠️ **UYARI:** Picture Lock sonrası herhangi bir kare ekleme/çıkarma yapılırsa ses tasarımı ve renk çalışması "out of sync" olur. Buna **"VFX/Sound Breakdown"** denir.
 
 ---
 
 ## 🔄 6. Round-Tripping (Conforming)
 
-Profesyonel projelerde kurgu Premiere'de yapılıp renk için Resolve'a gönderilir. Buna **Round-tripping** denir.
+Profesyonel projelerde kurgu Premiere'de yapılıp renk için Resolve'a gönderilir.
 
-**İş Akışı:**
-1. **Premiere'den Export:** Timeline'ı basitleştirin (sadece video trackleri kalsın), `XML` veya `AAF` olarak export edin.
-2. **Resolve'a Import:** XML dosyasını import ederek orijinal medya dosyalarına linkleyin (**Conforming**).
-3. **Color Grading:** Renk işlemleri tamamlanır.
-4. **Geri Dönüş:** Render alıp (yine XML ile) Premiere'e geri dönün veya final render'ı Resolve'dan yapın.
+**İş Akışı Detayı:**
+1. **Prepare Timeline:** Tüm efektleri, geçişleri ve üst üste binmiş trackleri temizleyin. Timeline mümkün olduğunca "flat" (tek bir video track) olmalıdır.
+2. **Export XML/AAF:** Premiere'den FCP XML veya AAF olarak export alın.
+3. **Relinking in Resolve:** Resolve'da XML'i açarken "Mixed Frame Rates" ve "Resolution" ayarlarının orijinal projeyle aynı olduğundan emin olun.
 
 ---
 
 ## 👥 6.5. Ortak Çalışma (Collaborative Workflows)
 
 Büyük projelerde birden fazla editör aynı anda çalışabilir:
-- **Adobe Productions:** Bir projeyi küçük parçalara bölerek kilitli (locked) sequence yapısıyla çalışmayı sağlar.
-- **Blackmagic Cloud:** DaVinci Resolve kullanıcılarının aynı veritabanı üzerinden gerçek zamanlı çalışmasına olanak tanır.
-- **Frame.io / Dropbox Replay:** Revizyon ve onay süreçleri için video üzerine direkt not bırakılan sistemler.
+- **Project Locking:** Bir kişi bir sequence'i açtığında diğerlerinin sadece "Read-Only" (salt okunur) görebilmesi.
+- **Review Platforms:** Frame.io üzerinden müşterinin videonun tam üzerindeki saniyeye "Burası çok karanlık" diye not düşebilmesi süreci 3 kat hızlandırır.
 
 ---
 
 ## 📦 7. Arşivleme ve Teslimat
 
 İş bittiğinde projeyi "dondurmak" gerekir.
-- **Media Management:** Sadece kullanılan klipleri (artı birkaç saniyelik pay - handles) yeni bir disk konumuna kopyalayın.
-- **Project Consolidation:** Kullanılmayan terabaytlarca ham veriyi silmeden önce projenin bağımsız bir kopyasını oluşturun.
-- **Turnover Prep:** Ses departmanı için `AAF/OMF`, renk için `XML/EDL` hazırlayın. Orijinal ses dosyalarını ve referans bir video (burn-in timecode) eklemeyi unutmayın.
+- **Media Consolidation:** Sadece kullanılan klipleri (artı birkaç saniyelik pay - handles) yeni bir disk konumuna kopyalayın.
+- **Project Archiving:** Proje dosyasını, fontları, kullanılan plugin listesini ve bir "Master Prores" kopyasını mutlaka saklayın.
+- **LTO Tape:** Çok büyük prodüksiyonlarda (TV/Sinema) veriler 30+ yıl saklanabilen manyetik bantlara (LTO) yazılır.
 
 ---
 

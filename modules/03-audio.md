@@ -45,16 +45,69 @@ Müzik ve diyalog aynı frekanslarda çakıştığında kullanılır.
 
 ---
 
-## 📊 LUFS Standartları (Loudness Units Full Scale)
+## 📊 Önemli Frekans Aralıkları
 
-Modern platformlarda sadece Peak değil, **Loudness** değerleri önemlidir.
+Ses düzenlerken (EQ) hangi aralığın neye karşılık geldiğini bilmek kritiktir:
 
-| Platform | Hedef (Integral LUFS) | Maks Peak (True Peak) |
-|----------|-----------|-----------|
-| **YouTube** | -14 LUFS | -1.0 dB |
-| **Spotify** | -14 LUFS | -1.0 dB |
-| **Netflix** | -27 LUFS | -2.0 dB |
-| **TV (EBU R128)** | -23 LUFS | -1.0 dB |
+| Frekans Aralığı | Tanım | Etkisi |
+|-----------------|-------|--------|
+| **20Hz - 60Hz** | Sub-Bass | Hissedilen ama zor duyulan derinlik. Fazlası "çamurlu" ses yapar. |
+| **80Hz - 250Hz** | Low-End | Sesin gövdesi. Erkek sesinin temel frekansları buradadır. |
+| **2kHz - 5kHz** | Presence | Netlik ve anlaşılırlık. İnsan kulağının en hassas olduğu yer. |
+| **7kHz - 12kHz** | Sibilance | "S", "Ş", "Ç" sesleri. Fazlası kulağı tırmalar (De-esser ile düzeltilir). |
+| **15kHz+** | Air | Sesin "havası" ve ferahlığı. |
+
+---
+
+## 🎚️ Dinamik İşleme (Dynamic Processing)
+
+Dinamik aralık, bir sesteki en sessiz ve en yüksek nokta arasındaki farktır.
+
+### 1. Kompresör (Compressor)
+Yüksek sesleri kısar, alçak sesleri yükseltir. Sesi "yoğunlaştırır".
+- **Threshold:** Kompresörün ne zaman devreye gireceği.
+- **Ratio:** Sıkıştırma oranı (Diyalog için genelde 3:1 veya 4:1).
+- **Make-up Gain:** Sıkıştırma sonrası kaybedilen genel ses seviyesini geri kazanma.
+
+### 2. Side-chaining (Ducking)
+Konuşma başladığında müziğin otomatik olarak kısılması tekniğidir.
+- Müziğe bir kompresör atılır ve "Sidechain Input" olarak vokal kanalı seçilir.
+- Vokal sinyal gönderdiğinde müzik baskılanır, vokal sustuğunda müzik eski seviyesine döner.
+
+---
+
+## 🔊 Ses Seviye Standartları (Loudness)
+
+Profesyonel dünyada artık "Peak" seviyesi yerine **LUFS** (Loudness Units relative to Full Scale) birimi kullanılmaktadır.
+
+| Platform | Hedef Seviye (Loudness) | Önemli Not |
+|----------|------------------------|------------|
+| **YouTube / Spotify** | -14 LUFS | Daha yüksek sesler platform tarafından otomatik kısılır. |
+| **TV (EBU R128)** | -23 LUFS | Yayıncılık standardı. Dinamik aralık daha fazladır. |
+| **Sinema** | -27 LUFS / 82dB SPL | Çok geniş dinamik aralık ve derin sessizlikler. |
+
+> **💡 İpucu:** Miksaj yaparken en yüksek noktanın (True Peak) **-1.0 dB**'i geçmediğinden emin olun.
+
+---
+
+## 🛠️ Profesyonel Ses Katmanları (Audio STEMS)
+
+Kurguda sesleri şu kategorilere ayırarak çalışmak ("checkerboarding") hız kazandırır:
+1.  **DX (Dialogue):** Ana diyaloglar ve dış sesler.
+2.  **SFX (Sound Effects):** Kapı gıcırtısı, patlama, rüzgar vb.
+3.  **Foley:** Karakterlerin ayak sesleri, kıyafet hışırtıları (stüdyoda kaydedilenler).
+4.  **BG/Ambiance:** Odanın veya mekanın genel atmosfer sesi.
+5.  **MX (Music):** Fon müzikleri ve müzik efektleri.
+
+---
+
+## 🧼 Ses Temizleme (Noise Reduction)
+- **Gate:** Belirli bir seviyenin altındaki sesleri (dip gürültüsü) tamamen kapatır.
+- **Spectral Repair:** AI araçları (izotope RX vb.) ile ses dalgası üzerindeki istenmeyen bir tıkırtıyı görsel olarak silme.
+- **Voice Isolation:** Arka plandaki trafik veya klima sesini diyalogdan ayırma.
+- **SFX:** Kütüphanelerden alınan hazır sesler (silah sesleri, araba motoru).
+
+> 💡 **Altın Kural:** "Worldizing" tekniğini kullanın. Stüdyoda kaydedilen kuru bir sesi, sahnedeki odanın akustiğine uydurmak için Reverb (Yankı) ekleyin.
 
 ---
 
