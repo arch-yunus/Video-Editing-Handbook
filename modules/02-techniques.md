@@ -9,121 +9,76 @@
 ### Standard Cut (Düz Kesme)
 İki klibin doğrudan arka arkaya eklenmesi. En yaygın ve evrensel geçiş türüdür.
 
-```
-[Sahne A] ---> [Sahne B]
-```
+### J-Cut ve L-Cut (Split Edits)
+- **J-Cut:** Sonraki sahnenin **sesi**, görüntüsünden **önce** girer. (Ses bir "J" harfi gibi geriden gelir).
+- **L-Cut:** Önceki sahnenin **sesi**, yeni sahnenin görüntüsü üzerinde **devam eder**.
 
-**Ne zaman kullanılır?** Çoğu durumda. Sade ve etkilidir.
-
----
-
-### J-Cut
-Sonraki sahnenin **sesi**, görüntüsünden **önce** girer.
-
-```
-[Sahne A görüntüsü] | [Sahne B görüntüsü]
-         [Sahne B sesi ------]
-```
-
-**Kullanım:** İzleyiciyi yeni bir ortama veya konuşmacıya yumuşakça hazırlar. Habercilik, belgesel ve anlatı filmlerinde sıkça kullanılır.
-
----
-
-### L-Cut
-Önceki sahnenin **sesi**, yeni sahnenin görüntüsü üzerinde **devam eder**.
-
-```
-[Sahne A görüntüsü] | [Sahne B görüntüsü]
-[Sahne A sesi ------]
-```
-
-**Kullanım:** Diyalog sahnelerinde bütünlük sağlar. Konuşan kişiyi değil, dinleyen kişinin tepkisini göstermek için idealdir.
-
----
-
-### Jump Cut
-Aynı çekim veya benzer açıdan birden fazla klibin art arda kesilmesiyle oluşur; küçük zaman atlamaları yaratır.
-
-**Kullanım:** YouTube, vlog ve hızlı tempolu belgesellerde dinamizm için kasıtlı olarak kullanılır. (Jean-Luc Godard'ın *Breathless* filmiyle sinema tarihine girmiştir.)
-
----
+**Kullanım:** Diyalog akışını doğallaştırır ve "ping-pong" etkisini (sürekli konuşana kesme) önler.
 
 ### Match Cut
 Görsel veya işitsel bir benzerlik paylaşan iki farklı sahne arasında yapılan kesme.
-
-**Örnekler:**
-- *2001: A Space Odyssey*: Kemik → Uzay gemisi
-- Şekil eşleşmesi: Yuvarlak güneş → Yuvarlak saat
-
-**Kullanım:** Zaman atlamaları, fikir birliği veya temalar arasındaki derin bağlantıları vurgulamak için kullanılır.
-
----
-
-## 🧠 Kurgu Kuralları ve Devamlılık (Continuity)
-
-İyi bir kurgu, izleyicinin mekansal ve zamansal olarak kafasının karışmasını önler.
-
-### 🗺️ 180 Derece Kuralı
-İki karakter arasındaki hayali bir "aks" çizgisidir. Kamera bu çizginin sadece bir tarafında kalmalıdır. Çizgi aşılırsa (Crossing the line), karakterlerin bakış yönleri birbirine ters düşer ve izleyicinin yön duygusu bozulur.
-
-### 📐 30 Derece Kuralı
-Aynı obje/kişi üzerine yapılan bir kesmede, kameranın en az **30 derece** yer değiştirmesi veya odak uzaklığının (focal length) belirgin şekilde değişmesi gerekir. Aksi takdirde kesme "hatalı bir jump cut" gibi görünür ve gözü tırmalar.
-
-### 👁️ Kesintisiz Hareket (Cutting on Action)
-Karakter bir kapıyı açarken veya otururken kesme yapmak, kesmeyi "görünmez" kılar. İzleyici hareketi takip ettiği için teknik kesmeyi fark etmez.
-
----
+- **Graphic Match:** İki farklı çekimdeki benzer şekillerin (örn: yuvarlak bir tekerlekten yuvarlak bir göze) eşleşmesi.
+- **Action Match:** Karakterin bir hareketi (örn: yumruk atma) bir sahnede başlayıp diğer sahnede tamamlanır.
 
 ### Smash Cut
 Çok yüksek sesli veya yoğun bir sahneden aniden sessiz, sakin bir sahneye geçiş. Şok ve komedi etkisi yaratır.
 
 ---
 
-### Cross-Cut (Paralel Kurgu)
-İki farklı mekanda aynı anda gelişen olayların birbirini kesen şekilde gösterilmesi.
+## 🌫️ Görünmez Kesmeler (Invisible Cuts)
 
-**Kullanım:** Gerilim sahneleri, kovalamacalar, telefon konuşmaları.
+Kesmenin varlığını tamamen gizlemek için kullanılan tekniklerdir.
+
+1.  **Whip Pan:** Kameranın çok hızlı dönmesi sonucu oluşan hareket bulanıklığı (motion blur) sırasında kesme yapmak.
+2.  **Object Blocking:** Bir nesnenin (veya kişinin) ekranı tamamen kapattığı anda bir sonraki sahneye geçmek.
+3.  **Morph Cut:** İki benzer plan arasındaki küçük farkları AI yardımıyla "eriterek" geçiş sağlamak (özellikle röportajlardaki "ee", "ıı" kısımlarını atmak için kullanılır).
 
 ---
 
-## 🎭 Kurgu Teorisi: Kuleshov Etkisi
+## 🧠 Kurgu Kuralları ve Psikoloji
+
+İyi bir kurgu, izleyicinin mekansal ve zamansal olarak kafasının karışmasını önler.
+
+### 🗺️ 180 Derece Kuralı
+İki karakter arasındaki hayali bir "aks" çizgisidir. Kamera bu çizginin sadece bir tarafında kalmalıdır. Çizgi aşılırsa karakterlerin bakış yönleri birbirine ters düşer.
+
+### 📐 30 Derece Kuralı
+Aynı obje üzerine yapılan bir kesmede, kameranın en az **30 derece** yer değiştirmesi veya odak uzaklığının belirgin şekilde değişmesi gerekir. Aksi takdirde kesme "hatalı bir jump cut" gibi görünür.
+
+### 👁️ Göz Takibi (Eye Trace)
+İzleyicinin gözünün ekranın neresinde olduğunu bilmek. Sahne A'da önemli olan şey ekranın sağındaysa, Sahne B'de de önemli olan şey sağda (veya ona yakın) olmalıdır. Bu, izleyicinin her kesmede ekranı "taramak" zorunda kalmasını önler ve yormaz.
+
+---
+
+## 🎭 Kurgu Teorisi: Montage
 
 Kurgu sadece görüntüleri birleştirmek değil, **yeni anlamlar yaratmaktır.**
 
-**Kuleshov Deneyi:**
-1. Aynı ifadesiz erkek yüzü + **Bir kase çorba** → İzleyici: "Adam aç."
-2. Aynı ifadesiz erkek yüzü + **Tabuttaki çocuk** → İzleyici: "Adam üzgün."
-3. Aynı ifadesiz erkek yüzü + **Güneşlenen kadın** → İzleyici: "Adam arzuluyor."
+### Kuleshov Etkisi
+Kurgu, iki bağımsız klibin yan yana gelmesiyle izleyicinin beyninde üçüncü bir anlam üretme sanatıdır.
+- `[İfadesiz Yüz]` + `[Çorba]` = **Açlık**
+- `[İfadesiz Yüz]` + `[Tabut]` = **Üzüntü**
 
-> 💡 **Sonuç:** Kurgu, iki bağımsız klibin yan yana gelmesiyle izleyicinin beyninde üçüncü bir anlam üretme sanatıdır.
+### Sovyet Montaj Teorisi (Sergei Eisenstein)
+Farklı görüntülerin bir çarpışma (collision) yaratarak izleyicide entelektüel veya duygusal bir tepki uyandırmasıdır.
 
 ---
 
-## 📸 B-Roll Kullanımı
+## 📸 A-Roll ve B-Roll Dengesi
 
-**A-Roll:** Ana anlatı materyali (röportaj, diyalog sahneleri).
-**B-Roll:** Bağlamı güçlendiren, hataları gizleyen ve hikayeyi zenginleştiren her şey.
+- **A-Roll:** Ana anlatı materyali (röportaj, diyalog sahneleri).
+- **B-Roll:** Bağlamı güçlendiren, hataları gizleyen ve hikayeyi zenginleştiren yardımcı görüntüler.
 
-### B-Roll Kapsaması İçin İpuçları
-
-| Çekim Türü | Açıklama |
-|-----------|-----------|
-| **Establishing Shot** | Mekanı tanıtır (geniş açı) |
-| **Insert Shot** | Bir nesneye yakın çekim |
-| **Cutaway** | Hikayeyle ilişkili ama sahnede olmayan bir şey |
-| **Reaction Shot** | Dinleyicinin/izleyicinin yüz ifadesi |
-
-> 💡 **Altın Kural:** A-Roll için 1 saat çekiyorsan, B-Roll için en az 30 dakika çek.
+> 💡 **Teknik İpucu:** B-Roll kullanırken "Cutaway" tekniği ile konuşmacının nefes aldığı veya takıldığı yerleri kapatabilirsiniz.
 
 ---
 
 ## ⏱️ Tempo ve Ritim
 
-Kurgunun ruhunu "_tempo_" belirler. Bunu sezgisel değil, bilinçli inşa etmek gerekir.
-
-- **Hızlı kesme** → Aksiyon, gerilim, enerji
-- **Uzun çekim** → Reflexion, melankoli, yalnızlık
-- **Müziğin vuruşuna kesin** → Otomatik ritim sağlar
+Kurgunun ruhunu **tempo** belirler. 
+- **Kısa Çekimler:** Aksiyon, gerilim, panik.
+- **Uzun Çekimler:** Düşünce, melankoli, huzur.
+- **Müzik Senkronizasyonu:** Her zaman vuruşa (beat) kesmek bir süre sonra sıkıcı olabilir. Bazen vuruştan 2-3 kare önce veya sonra kesmek (off-beat) ritmi daha "organik" hissettirir.
 
 ---
 

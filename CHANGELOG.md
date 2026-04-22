@@ -7,6 +7,22 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-04-22
+
+### Eklenenler
+- Modül 01: Mermaid iş akışı şeması ve "Conforming/Archiving" detayları.
+- Modül 02: "İngörünmez Kesmeler", "Göz Takibi" ve "Montaj Teorisi".
+- Modül 03: "Sidechain Compression", "Spektral Düzenleme" ve teknik EQ stratejileri.
+- Modül 04: "Renk Yönetimi (ACES)", "Sinyal Zinciri" ve "Secondary Grading".
+- Modül 05: Üretken video araçları (Runway Gen-3, Luma) ve AI derinlik haritalama.
+- Modül 06: "Mezzanine Formatlar", "HDR Export" ve "Chroma Subsampling" detayları.
+- `resources/checklist.md`: Profesyonel QC ve teknik kontrol adımları.
+- `resources/links.md`: Modern SaaS araçları (Frame.io, Artlist) ve ileri seviye eğitimler.
+
+### Değiştirilenler
+- Tüm modüller profesyonel terminoloji ile derinleştirildi.
+- Görsel hiyerarşi ve Markdown formatlaması iyileştirildi.
+
 ## [1.1.0] - 2026-02-23
 
 ### Eklenenler
