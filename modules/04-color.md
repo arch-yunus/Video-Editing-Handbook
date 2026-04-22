@@ -25,6 +25,17 @@ Renklerin farklı kameralar ve ekranlar arasında tutarlı görünmesini sağlay
 
 ---
 
+## 🏗️ DaVinci Resolve: Nodal Yapı (Node Strategy)
+
+Renk düzenleme katmanlar (layers) yerine düğümler (nodes) üzerinden ilerler. İşte tipik bir profesyonel node ağacı (fixed node tree):
+1.  **Node 01: Exposure & WB:** Temel pozlama ve beyaz dengesi düzeltmeleri.
+2.  **Node 02: Contrast & Saturation:** Görüntünün dinamik aralığını ve canlılığını belirleme.
+3.  **Node 03: Primary Corrections:** Genel tonlamalar.
+4.  **Node 04: Secondaries / Power Windows:** Sadece belirli alanları (örn: sadece gökyüzünü veya sadece yüzü) değiştirme.
+5.  **Node 05: Look / Film Emulation:** Projenin son sanatsal dokunuşu.
+
+---
+
 ## 🔑 İki Temel Safha
 
 ### 1. Color Correction (Renk Doğrulama)
@@ -45,9 +56,9 @@ Renklerin farklı kameralar ve ekranlar arasında tutarlı görünmesini sağlay
 
 | Scope | Görevi | Kritik Nokta |
 |-------|--------|---------------|
-| **Waveform** | Parlaklık (Luma) | 0 (Siyah) - 100/1023 (Beyaz) arası. |
-| **Parade** | RGB Dengesi | Kanalların alt/üst sınırları dengeli olmalı. |
-| **Vectorscope** | Ton ve Doygunluk | **Skin Tone Line:** İnsan cildi bu çizgi üzerindedir. |
+| **Waveform** | Parlaklık (Luma) | 0 (Siyah) - 100/1023 (Beyaz) arası. Parlak alanların patlamadığından (clipping) emin olun. |
+| **Parade** | RGB Dengesi | Kanalların alt/üst sınırları dengeli olmalı. Beyaz dengesi hatalarını burada görebilirsiniz. |
+| **Vectorscope** | Ton ve Doygunluk | **Skin Tone Line:** İnsan cildi (ırk fark etmeksizin) bu çizgi üzerine düşmelidir. |
 
 ---
 

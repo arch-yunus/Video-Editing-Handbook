@@ -4,6 +4,11 @@ Bu kontrol listesini her projede takip ederek teknik hatalardan kaçının ve pr
 
 ---
 
+## 📝 0. Pre-Prodüksiyon (Hazırlık)
+- [ ] **Script/Outline:** Hikaye akışı veya senaryo onaylandı.
+- [ ] **Moodboard:** Projenin görsel stili ve renk paleti belirlendi.
+- [ ] **Technical Specs:** Çıkış formatı (16:9, 9:16), çözünürlük (4K, 1080p) ve FPS netleşti.
+
 ## 🏗️ 1. Hazırlık ve Organizasyon
 - [ ] Proje klasör hiyerarşisi oluşturuldu (01_RAW, 02_AUDIO vb.).
 - [ ] Ham dosyalar 3-2-1 kuralına göre yedeklendi.
@@ -20,6 +25,8 @@ Bu kontrol listesini her projede takip ederek teknik hatalardan kaçının ve pr
 - [ ] **Fine Cut:** Tempo, ritim ve geçişler (standard, J/L cut) mükemmelleştirildi.
 - [ ] **Graphics/VFX:** Alt yazılar, başlıklar ve temel VFX işlemleri eklendi.
 - [ ] **PICTURE LOCK:** Görüntü kurgusu kesinleşti ve onay alındı. (Kritik!)
+- [ ] **Review (Varyasyonlar):** Müşteri veya yönetmen revizyonları tamamlandı.
+- [ ] **Collaboration:** Frame.io veya benzeri platformlara inceleme kopyası yüklendi.
 
 ---
 

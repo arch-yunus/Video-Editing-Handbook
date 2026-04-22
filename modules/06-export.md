@@ -10,11 +10,13 @@
 - **Container (.mp4, .mov, .mxf):** İçinde video, ses ve metadata barındıran "kutu".
 - **Codec (H.264, ProRes, AV1):** Görüntü verisini sıkıştıran ve açan matematiksel yöntem.
 
-### 🎨 Chroma Subsampling (Renk Örnekleme)
-İnsan gözü parlaklığa (Luma) renkten (Chroma) daha duyarlıdır. Sıkıştırma bu prensibe dayanır:
-- **4:2:0:** Renk verisi %75 oranında atılır. (YouTube, Blu-ray, Telefonlar).
-- **4:2:2:** Renk verisi %50 oranında korunur. (Yayıncılık, profesyonel kurgu).
 - **4:4:4:** Renk verisi %100 korunur. (VFX, Master arşiv).
+
+### 💎 Bit-Derinliği (Bit-Depth)
+Görüntüdeki renk geçişlerinin (gradient) pürüzsüzlüğünü belirler.
+- **8-bit:** 16.7 milyon renk. Gökyüzü gibi alanlarda "banding" (renk kırılması) yapabilir.
+- **10-bit:** 1.07 milyar renk. Profesyonel renk düzenleme ve HDR için zorunludur.
+- **12-bit:** 68.7 milyar renk. Sinema kameraları (RAW) için standarttır.
 
 ---
 
@@ -65,11 +67,22 @@ Modern dünyada **Progressive (p)** kuraldır.
 
 ---
 
-## 🎯 Platform Bazlı Tavsiyeler
-
 1.  **YouTube:** H.264 yerine mümkünse **H.265 (HEVC)** kullanın. Daha küçük boyutta daha fazla detay (özellikle 4K'da) sağlar.
-2.  **Instagram:** Bitrate'i 15 Mbps'in üstünde tutmayın; Instagram'ın kendi algoritması aşırı yüksek dosyaları bozarak sıkıştırabilir.
+2.  **Instagram & TikTok:**
+    | Platform | Oran | Çözünürlük | FPS | Bitrate |
+    | :--- | :--- | :--- | :--- | :--- |
+    | **Reels/TikTok** | 9:16 | 1080x1920 | 30/60 | 10-15 Mbps |
+    | **YouTube HD** | 16:9 | 1920x1080 | 24/25 | 8-12 Mbps |
 3.  **WhatsApp/Telegram:** Göndermeden önce çözünürlüğü 720p'ye düşürmek, izleyici deneyimini hızlandırır.
+
+---
+
+## 🏛️ Arşivleme: Gold Master ve LTO
+
+İş bittiğinde sadece "Final.mp4" almak yeterli değildir:
+- **Gold Master:** Hiçbir yazı veya grafik içermeyen (Clean), en yüksek kaliteli (ProRes 4444) ana kopya.
+- **Project Managed Archive:** Sadece kullanılan kliplerin ve proje dosyasının saklandığı paket.
+- **LTO (Linear Tape-Open):** Uzun vadeli (30+ yıl) saklama için kullanılan manyetik bant yedekleme sistemi.
 
 ---
 

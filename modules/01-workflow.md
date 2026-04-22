@@ -43,8 +43,15 @@ Proje_Adı/
 ├── 04_EXPORTS/           # Çıktı dosyaları (farklı formatlarda)
 │   ├── Review_Cuts/
 │   └── Final/
-└── 05_PROJECT_FILES/     # .prproj, .drp, .fcpx dosyaları
+├── 05_PROJECT_FILES/     # .prproj, .drp, .fcpx dosyaları
+└── 06_TURNOVERS/         # Diğer departmanlar için hazırlanan dosyalar (EDL, XML, AAF)
 ```
+
+### 🏷️ Dosya Adlandırma Konvansiyonu (Naming Convention)
+
+Profesyonel bir projede dosya isimleri tutarlı olmalıdır:
+`YYYYMMDD_ProjeAdi_Sahne_Varyasyon_Versiyon_EditörBaşHarfleri.ext`
+Örn: `20240422_Handbook_Opening_RoughCut_v01_BY.mp4`
 
 ### 🏷️ Dailies ve Metadata
 Çekimlerin yapıldığı günün sonunda görüntülerin kontrol edilmesi sürecine **Dailies** denir.
@@ -111,11 +118,21 @@ Profesyonel projelerde kurgu Premiere'de yapılıp renk için Resolve'a gönderi
 
 ---
 
+## 👥 6.5. Ortak Çalışma (Collaborative Workflows)
+
+Büyük projelerde birden fazla editör aynı anda çalışabilir:
+- **Adobe Productions:** Bir projeyi küçük parçalara bölerek kilitli (locked) sequence yapısıyla çalışmayı sağlar.
+- **Blackmagic Cloud:** DaVinci Resolve kullanıcılarının aynı veritabanı üzerinden gerçek zamanlı çalışmasına olanak tanır.
+- **Frame.io / Dropbox Replay:** Revizyon ve onay süreçleri için video üzerine direkt not bırakılan sistemler.
+
+---
+
 ## 📦 7. Arşivleme ve Teslimat
 
 İş bittiğinde projeyi "dondurmak" gerekir.
 - **Media Management:** Sadece kullanılan klipleri (artı birkaç saniyelik pay - handles) yeni bir disk konumuna kopyalayın.
 - **Project Consolidation:** Kullanılmayan terabaytlarca ham veriyi silmeden önce projenin bağımsız bir kopyasını oluşturun.
+- **Turnover Prep:** Ses departmanı için `AAF/OMF`, renk için `XML/EDL` hazırlayın. Orijinal ses dosyalarını ve referans bir video (burn-in timecode) eklemeyi unutmayın.
 
 ---
 

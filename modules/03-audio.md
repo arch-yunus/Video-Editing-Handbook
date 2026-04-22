@@ -83,6 +83,32 @@ Her çekim ortamının kendine özgü bir "sessizliği" vardır.
 - **Neden önemli?** Diyalog klipleri arasındaki mutlak sessizlik izleyiciyi rahatsız eder. Master kanala düşük sesli bir room tone eklemek sürekliliği sağlar.
 - **Kayıt Belgelem:** Sette mutlaka en az 1 dakika "herkes sussun" diyerek kayıt alın.
 
+### 🔊 Ses Miksaj Zinciri (Mastering Chain)
+
+Profesyonel bir ses elde etmek için şu sıra takip edilmelidir:
+1.  **Gürültü Giderici (Denoiser):** AI tabanlı (Voice Isolation) veya parametrik araçlarla arka plan sesini temizleme.
+2.  **Parametrik EQ:** Gereksiz frekansları kesme (Low-cut) ve netliği artırma.
+3.  **Kompresör (Compressor):** Ses seviyesini dengede tutma (Dinamik aralığı daraltma).
+4.  **Limiter:** Sesin belirlenen eşiği (genelde -1 dB veya -3 dB) geçip patlamasını (clipping) önleme.
+
 ---
 
-[🏠 README'ye Dön](../README.md)
+## 👂 Room Tone ve Foley
+
+Ses kurgusunun en az görüntü kurgusu kadar detaylı olması gerekir.
+- **Room Tone:** Mekanın sessizliğinin sesi. Diyaloglardaki boşlukları doldurmak için mutlaka her çekimde 30 saniye kaydedilir.
+- **Foley:** Görüntüye sonradan eklenen fiziksel ses efektleri (ayak sesi, kıyafet hışırtısı, kapı gıcırtısı). Bu, sahneye derinlik ve gerçekçilik katar.
+- **Soundscape (Ambiyans):** Mekanın ruhunu yansıtan trafik, kuş sesleri gibi katmanlar.
+
+---
+
+## 📊 Loudness Standartları (LUFS)
+
+Video çıkışı almadan önce sesin "Loudness" değerini kontrol etmek hayati önem taşır.
+| Platform | Hedef LUFS (Loudness Unit Full Scale) |
+| :--- | :--- |
+| **YouTube / Spotify** | -14 LUFS |
+| **Netflix / Disney+** | -27 LUFS (±2 dB) |
+| **TV Broadcast (EBU R128)** | -23 LUFS |
+
+> **İpucu:** Eğer sesiniz -14 LUFS'tan daha yüksekse, platformlar sesinizi otomatik olarak kısacaktır. Bu da ses kalitenizin bozulmasına neden olur.
